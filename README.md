@@ -15,8 +15,6 @@
 - [A3 横版完整成果册](docs/a3-residential-planning-portfolio.pdf)
 - [GitHub Pages 配置与上传说明](GITHUB_PAGES_SETUP.md)
 
-> GitHub Pages 地址将在仓库创建并启用 Pages 后生效。
-
 ## 项目概况
 
 | 项目要素 | 内容 |
