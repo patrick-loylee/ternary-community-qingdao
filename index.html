@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="三元·逸享——青岛市李沧区沧口街道西流庄地块住区规划设计作品集。" />
+  <meta name="theme-color" content="#173b4b" />
+  <title>三元·逸享｜西流庄地块住区规划设计</title>
+  <style>
+    :root {
+      --navy: #173b4b;
+      --navy-deep: #0c2b37;
+      --blue: #557e91;
+      --blue-soft: #dce8ec;
+      --teal: #477b76;
+      --orange: #d68649;
+      --paper: #f8f6f0;
+      --cream: #eee9de;
+      --white: #fff;
+      --ink: #26383e;
+      --muted: #68777b;
+      --line: #d9d6cc;
+      --shadow: 0 24px 64px rgba(23, 59, 75, .14);
+      --radius: 22px;
+      --max: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, "Microsoft YaHei", "PingFang SC", system-ui, -apple-system, sans-serif;
+      line-height: 1.75;
+    }
+    img { display: block; width: 100%; }
+    a { color: inherit; }
+    figure { margin: 0; }
+    .wrap { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+    .skip-link {
+      position: fixed;
+      left: 16px;
+      top: -80px;
+      z-index: 100;
+      padding: 10px 16px;
+      color: var(--white);
+      background: var(--navy);
+      border-radius: 8px;
+    }
+    .skip-link:focus { top: 16px; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(248, 246, 240, .92);
+      border-bottom: 1px solid rgba(217, 214, 204, .8);
+      backdrop-filter: blur(16px);
+    }
+    .header-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      color: var(--navy);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .brand strong { font-size: 18px; letter-spacing: .04em; }
+    .brand span { color: var(--muted); font-size: 11px; letter-spacing: .08em; }
+    nav { display: flex; gap: 22px; overflow-x: auto; }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    nav a:hover, nav a:focus-visible { color: var(--orange); }
+
+    .hero {
+      min-height: 780px;
+      display: grid;
+      align-items: end;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(9, 39, 51, .93) 0%, rgba(9, 39, 51, .68) 47%, rgba(9, 39, 51, .16) 100%),
+        url("assets/hero-community.jpg") center / cover no-repeat;
+      overflow: hidden;
+    }
+    .hero-content { padding-block: 128px 96px; max-width: 760px; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--orange);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 44px;
+      height: 4px;
+      border-radius: 4px;
+      background: currentColor;
+    }
+    h1 {
+      margin: 26px 0 12px;
+      font-size: clamp(56px, 8.5vw, 108px);
+      line-height: .98;
+      letter-spacing: -.06em;
+    }
+    .hero h2 {
+      margin: 0;
+      font-size: clamp(23px, 3.2vw, 42px);
+      line-height: 1.28;
+    }
+    .hero p {
+      max-width: 680px;
+      margin: 24px 0 34px;
+      color: rgba(255, 255, 255, .8);
+      font-size: clamp(16px, 1.8vw, 20px);
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 14px; }
+    .button {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 23px;
+      border: 1px solid rgba(255, 255, 255, .45);
+      border-radius: 999px;
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 800;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .button.primary { border-color: var(--orange); background: var(--orange); }
+    .button:hover, .button:focus-visible { transform: translateY(-2px); }
+
+    .facts {
+      position: relative;
+      z-index: 4;
+      margin-top: -52px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .fact { padding: 27px 22px; border-right: 1px solid var(--line); }
+    .fact:last-child { border-right: 0; }
+    .fact strong { display: block; color: var(--blue); font-size: clamp(21px, 2.2vw, 31px); line-height: 1.15; }
+    .fact span { color: var(--muted); font-size: 12px; }
+
+    .section { padding: 108px 0; }
+    .section.alt { background: var(--cream); }
+    .section-head {
+      margin-bottom: 46px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, .62fr);
+      align-items: end;
+      gap: 54px;
+    }
+    .section-head h2, .copy h2 {
+      margin: 12px 0 0;
+      color: var(--navy);
+      font-size: clamp(35px, 4vw, 58px);
+      line-height: 1.15;
+      letter-spacing: -.04em;
+    }
+    .section-head p, .copy p { margin: 0; color: var(--muted); }
+
+    .feature {
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .feature img { aspect-ratio: 16 / 8.5; object-fit: cover; }
+    .caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 15px 20px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+    }
+
+    .concept-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .concept {
+      min-height: 284px;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+    .concept:nth-child(1) { background: var(--blue-soft); }
+    .concept:nth-child(2) { background: #e4ece6; }
+    .concept:nth-child(3) { background: #f3e7dc; }
+    .concept b {
+      width: 44px;
+      height: 44px;
+      display: inline-grid;
+      place-items: center;
+      color: var(--white);
+      background: var(--orange);
+      border-radius: 50%;
+    }
+    .concept h3 { margin: 28px 0 10px; color: var(--navy); font-size: 27px; }
+    .concept p { margin: 0; color: var(--muted); }
+
+    .systems { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .system {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--white);
+    }
+    .system span { color: var(--orange); font-weight: 900; font-size: 12px; }
+    .system h3 { margin: 15px 0 8px; color: var(--navy); font-size: 21px; }
+    .system p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1.18fr .82fr;
+      gap: 62px;
+      align-items: center;
+    }
+    .split.reverse { grid-template-columns: .82fr 1.18fr; }
+    .split.reverse .visual { order: 2; }
+    .visual {
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .visual img { min-height: 430px; object-fit: cover; }
+    .copy h2 { margin-bottom: 18px; }
+    .list { display: grid; gap: 13px; margin-top: 26px; }
+    .list div {
+      padding: 15px 18px;
+      border-left: 4px solid var(--orange);
+      border-radius: 0 12px 12px 0;
+      background: rgba(255, 255, 255, .72);
+    }
+
+    .housing-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 24px; }
+    .housing-figure, .housing-copy {
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .housing-figure img { min-height: 540px; object-fit: cover; object-position: top; }
+    .housing-copy { padding: 40px; }
+    .housing-copy h3 { margin: 10px 0 12px; color: var(--navy); font-size: 30px; }
+    .housing-copy p { color: var(--muted); }
+    .type {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 14px;
+      background: var(--blue-soft);
+    }
+    .type:nth-of-type(2) { background: #f3e7dc; }
+    .type strong { color: var(--navy); }
+    .type span { display: block; color: var(--muted); font-size: 13px; }
+
+    .analysis-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 24px; }
+    .analysis-image { border-radius: var(--radius); background: var(--white); box-shadow: var(--shadow); overflow: hidden; }
+    .analysis-image img { min-height: 500px; object-fit: cover; object-position: top; }
+    .analysis-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .analysis-card { padding: 25px; border-radius: 16px; background: var(--white); }
+    .analysis-card:nth-child(1), .analysis-card:nth-child(4) { background: var(--blue-soft); }
+    .analysis-card h3 { margin: 0 0 10px; color: var(--navy); }
+    .analysis-card p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .boards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+    .board {
+      color: inherit;
+      text-decoration: none;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--white);
+      overflow: hidden;
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+    .board:hover, .board:focus-visible { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .board img { aspect-ratio: 1.415 / 1; object-fit: cover; }
+    .board span { display: flex; justify-content: space-between; gap: 12px; padding: 15px 18px; }
+    .board strong { color: var(--navy); }
+    .board em { color: var(--muted); font-size: 13px; font-style: normal; }
+
+    .portfolio { color: var(--white); background: var(--navy); }
+    .portfolio-inner { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 50px; }
+    .portfolio h2 { margin: 10px 0 14px; font-size: clamp(36px, 5vw, 62px); line-height: 1.1; }
+    .portfolio p { max-width: 760px; color: rgba(255, 255, 255, .72); }
+    .portfolio .button { min-width: 230px; }
+
+    .site-footer { padding: 34px 0; color: rgba(255, 255, 255, .66); background: var(--navy-deep); }
+    .footer-inner { display: flex; justify-content: space-between; gap: 24px; font-size: 13px; }
+    .footer-inner strong { color: var(--white); }
+
+    @media (max-width: 1000px) {
+      .facts { grid-template-columns: repeat(3, 1fr); }
+      .fact:nth-child(3) { border-right: 0; }
+      .fact:nth-child(-n+3) { border-bottom: 1px solid var(--line); }
+      .systems { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 820px) {
+      .header-inner { align-items: flex-start; flex-direction: column; gap: 10px; padding-block: 14px; }
+      nav { width: 100%; padding-bottom: 4px; }
+      .hero { min-height: 680px; }
+      .section-head, .split, .split.reverse, .housing-grid, .analysis-grid, .portfolio-inner { grid-template-columns: 1fr; }
+      .split.reverse .visual { order: initial; }
+      .concept-grid { grid-template-columns: 1fr; }
+      .boards { grid-template-columns: 1fr; }
+      .portfolio .button { justify-self: start; }
+    }
+    @media (max-width: 560px) {
+      .wrap { width: min(calc(100% - 24px), var(--max)); }
+      .brand span { display: none; }
+      .hero { min-height: 620px; }
+      .hero-content { padding-bottom: 66px; }
+      .section { padding: 76px 0; }
+      .section-head { gap: 20px; }
+      .facts { margin-top: -30px; grid-template-columns: repeat(2, 1fr); }
+      .fact { padding: 22px 18px; border-bottom: 1px solid var(--line); }
+      .fact:nth-child(2n) { border-right: 0; }
+      .fact:nth-last-child(-n+2) { border-bottom: 0; }
+      .systems, .analysis-cards { grid-template-columns: 1fr; }
+      .visual img, .housing-figure img, .analysis-image img { min-height: 300px; }
+      .footer-inner { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .button, .board { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳至主要内容</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top">
+        <strong>三元·逸享</strong>
+        <span>TERNARY COMMUNITY · QINGDAO</span>
+      </a>
+      <nav aria-label="作品集导航">
+        <a href="#overview">项目</a>
+        <a href="#concept">理念</a>
+        <a href="#masterplan">总图</a>
+        <a href="#public-space">公共空间</a>
+        <a href="#housing">住宅</a>
+        <a href="#analysis">分析</a>
+        <a href="#boards">展板</a>
+        <a href="#portfolio">成果册</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero-content">
+        <div class="eyebrow">Residential Planning Portfolio</div>
+        <h1>三元·逸享</h1>
+        <h2>李沧区沧口街道西流庄地块<br />住区规划设计</h2>
+        <p>以全龄公共服务、连续绿地与多层次居住组团，回应城中村更新、生活圈完善与滨河社区重塑。</p>
+        <div class="actions">
+          <a class="button primary" href="#masterplan">浏览设计成果</a>
+          <a class="button" href="docs/a3-residential-planning-portfolio.pdf" target="_blank" rel="noopener">打开 A3 成果册</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap facts" aria-label="项目关键指标">
+      <div class="fact"><strong>12.86 ha</strong><span>总用地面积</span></div>
+      <div class="fact"><strong>1.71</strong><span>容积率</span></div>
+      <div class="fact"><strong>39.41%</strong><span>绿地率</span></div>
+      <div class="fact"><strong>22.46%</strong><span>建筑密度</span></div>
+      <div class="fact"><strong>1,062 户</strong><span>规划户数</span></div>
+      <div class="fact"><strong>1,400</strong><span>机动车停车位</span></div>
+    </div>
+
+    <section class="section" id="overview">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Project Overview</div>
+            <h2>从西流庄更新，走向完整的全龄社区生活</h2>
+          </div>
+          <p>基地位于青岛市李沧区沧口街道，北接振华路、东邻永清路、南向大村河。设计在改善住房的同时补齐教育、养老、文化、运动、商业与开放空间。</p>
+        </div>
+        <figure class="feature">
+          <img src="assets/community-life.jpg" alt="西流庄住区规划整体鸟瞰与社区公共空间" />
+          <figcaption class="caption">
+            <span>住区整体鸟瞰与公共空间体系</span>
+            <span>青岛 · 李沧区 · 沧口街道</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section alt" id="concept">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Design Concept</div>
+            <h2>三个系统，共同构成“三元·逸享”</h2>
+          </div>
+          <p>共享服务、绿色生活与多元居住不是彼此分离的图层，而是通过日常步行路径、公共节点和住宅组团相互嵌合。</p>
+        </div>
+        <div class="concept-grid">
+          <article class="concept">
+            <b>01</b>
+            <h3>共享服务元</h3>
+            <p>幼儿园、文体中心、社区照料、商业与运动场沿主要步行路径布置，构成可达、可见、可共享的服务网络。</p>
+          </article>
+          <article class="concept">
+            <b>02</b>
+            <h3>绿色生活元</h3>
+            <p>集中绿心、宅间花园与滨河方向形成连续开放空间，让运动、游戏、休憩与邻里交往进入社区日常。</p>
+          </article>
+          <article class="concept">
+            <b>03</b>
+            <h3>多元居住元</h3>
+            <p>多种层数、围合方式和户型面积回应原居民、青年家庭、多代共居与改善型需求。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="masterplan">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Masterplan</div>
+            <h2>一心串联、组团围合、公服嵌入</h2>
+          </div>
+          <p>集中绿心是总体结构核心，次级绿地进入各住宅组团；公共服务布置在主要到达与共享节点，外围车行与内部慢行分层组织。</p>
+        </div>
+        <figure class="feature">
+          <img src="assets/masterplan.jpg" alt="西流庄地块住区规划总平面图" loading="lazy" decoding="async" />
+          <figcaption class="caption">
+            <span>住区规划总平面图 · 1:1000</span>
+            <span>集中绿心 · 全龄公服 · 分级路网</span>
+          </figcaption>
+        </figure>
+        <div class="systems" style="margin-top: 24px;">
+          <article class="system"><span>01 · EDUCATION</span><h3>12 班幼儿园</h3><p>位于北侧相对独立地块，便于接送并减少穿越社区内部。</p></article>
+          <article class="system"><span>02 · CULTURE</span><h3>文体共享中心</h3><p>与室外运动场相邻，形成社区主要公共活动节点。</p></article>
+          <article class="system"><span>03 · CARE</span><h3>社区照料服务</h3><p>联系安静的宅间绿地，为老年居民提供近距离支持。</p></article>
+          <article class="system"><span>04 · MOBILITY</span><h3>外围车行体系</h3><p>停车下沉，车辆沿外围组织，释放中心步行与开放空间。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="public-space">
+      <div class="wrap split">
+        <figure class="visual">
+          <img src="assets/community-life.jpg" alt="中心绿地、文化体育中心与社区生活场景" loading="lazy" decoding="async" />
+        </figure>
+        <div class="copy">
+          <div class="eyebrow">Public Space</div>
+          <h2>集中绿心成为全龄共享的社区客厅</h2>
+          <p>公共空间从中心绿心向宅间花园、入口广场和沿街界面逐级展开。景观不仅用于观看，也承载运动、儿童游戏、文化活动与邻里交往。</p>
+          <div class="list">
+            <div><strong>中心绿心</strong>｜主景观轴、环形步道、林下空间与多层植物</div>
+            <div><strong>文体共享</strong>｜文化体育中心与球场形成全天候活动节点</div>
+            <div><strong>邻里花园</strong>｜分散服务住宅组团，缩短高频日常到达</div>
+            <div><strong>滨河联系</strong>｜南侧慢行入口将绿地体验延伸至大村河方向</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="housing">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Housing Types</div>
+            <h2>从紧凑主力到家庭改善的完整户型梯度</h2>
+          </div>
+          <p>户型以南向采光、自然通风、合理交通核和家庭共享空间为基础，适应安置、成长、多代共居和改善需求。</p>
+        </div>
+        <div class="housing-grid">
+          <figure class="housing-figure">
+            <img src="assets/housing-types.jpg" alt="四类住宅标准层户型平面" loading="lazy" decoding="async" />
+          </figure>
+          <div class="housing-copy">
+            <div class="eyebrow">Four Types</div>
+            <h3>多类型住宅组团</h3>
+            <p>不同面积段与建筑组团共同形成层次丰富的社区居住选择，避免单一高层行列式布局带来的空间同质化。</p>
+            <div class="type"><strong>约 90-110 ㎡</strong><span>紧凑与主力户型：交通高效、主要生活空间优先朝南。</span></div>
+            <div class="type"><strong>约 125-180 ㎡</strong><span>改善户型：强化南北通透、家庭共享与可变房间。</span></div>
+            <div class="type"><strong>50 幢住宅及公服建筑</strong><span>通过高度、围合和公共空间关系塑造多个可识别组团。</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="analysis">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Environmental Analysis</div>
+            <h2>技术分析校核居住环境与空间结构</h2>
+          </div>
+          <p>日照、气候、景观、结构与竖向分析共同检验建筑布局、绿地连接、公共空间采光和全龄步行的基本合理性。</p>
+        </div>
+        <div class="analysis-grid">
+          <figure class="analysis-image">
+            <img src="assets/climate-analysis.jpg" alt="住区日照、气候、景观与规划结构分析" loading="lazy" decoding="async" />
+          </figure>
+          <div class="analysis-cards">
+            <article class="analysis-card"><h3>日照</h3><p>冬季日照分析校核住宅间距与公共空间采光。</p></article>
+            <article class="analysis-card"><h3>气候</h3><p>青岛季风与降水特征指导朝向、通风、排水和绿地渗透。</p></article>
+            <article class="analysis-card"><h3>景观</h3><p>集中绿地通过主轴与支线连续进入各住宅组团。</p></article>
+            <article class="analysis-card"><h3>竖向</h3><p>顺应北高南低约 4.77 m 高差，组织排水与无障碍到达。</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="boards">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Presentation Boards</div>
+            <h2>四张 A1 展板构成完整设计证据链</h2>
+          </div>
+          <p>点击任意展板可在新窗口查看高清图。展板依次呈现现状、总体规划、竖向与户型、立面及环境分析。</p>
+        </div>
+        <div class="boards">
+          <a class="board" href="assets/a1-board-01.jpg" target="_blank" rel="noopener"><img src="assets/a1-board-01.jpg" alt="第一张 A1 展板：区位与场地现状" loading="lazy" decoding="async" /><span><strong>01 现状与区位</strong><em>用地 · 交通 · 周边</em></span></a>
+          <a class="board" href="assets/a1-board-02.jpg" target="_blank" rel="noopener"><img src="assets/a1-board-02.jpg" alt="第二张 A1 展板：总体规划与设计推演" loading="lazy" decoding="async" /><span><strong>02 总体规划</strong><em>总图 · 人群 · 路网</em></span></a>
+          <a class="board" href="assets/a1-board-03.jpg" target="_blank" rel="noopener"><img src="assets/a1-board-03.jpg" alt="第三张 A1 展板：竖向设计与住宅户型" loading="lazy" decoding="async" /><span><strong>03 竖向与户型</strong><em>标高 · 排水 · 住宅</em></span></a>
+          <a class="board" href="assets/a1-board-04.jpg" target="_blank" rel="noopener"><img src="assets/a1-board-04.jpg" alt="第四张 A1 展板：立面与环境分析" loading="lazy" decoding="async" /><span><strong>04 立面与分析</strong><em>城市界面 · 日照 · 景观</em></span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section portfolio" id="portfolio">
+      <div class="wrap portfolio-inner">
+        <div>
+          <div class="eyebrow">Complete Portfolio</div>
+          <h2>16 页 A3 横版最终成果册</h2>
+          <p>完整收录项目概况、场地研究、设计理念、总体规划、全龄服务、公共空间、竖向设计、住宅户型、城市立面与环境分析。</p>
+        </div>
+        <a class="button primary" href="docs/a3-residential-planning-portfolio.pdf" target="_blank" rel="noopener">打开完整成果册</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span><strong>三元·逸享</strong> · 李沧区沧口街道西流庄地块住区规划设计</span>
+      <span>Residential Planning Portfolio · Qingdao</span>
+    </div>
+  </footer>
+</body>
+</html>

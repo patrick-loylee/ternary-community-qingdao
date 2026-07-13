@@ -1,0 +1,30 @@
+# Heavy design source files
+*.psd
+*.psb
+*.ai
+*.dwg
+*.dxf
+*.skp
+*.skb
+*.tif
+*.tiff
+
+# Editable course and research files
+*.doc
+*.docx
+*.ppt
+*.pptx
+*.xls
+*.xlsx
+
+# Local exports and temporary files
+*.tmp
+*.bak
+*.autosave
+~$*
+.DS_Store
+Thumbs.db
+
+# Local work folders
+work/
+tmp/
